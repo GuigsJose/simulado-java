@@ -1,18 +1,46 @@
-## Getting Started
+# 1. criar um repositório com nome: simulado
+# 2. criar os arquivos A e B com editor de texto
+# 3. criar um projeto java para ler os arquivos A e B e gerar o C com Orientação a objetos(Listas também)
+# 4. versionar no git.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+A: pessoas.csv:
 
-## Folder Structure
+| codigo | nome |
+|--------|------|
+|  1     | Paulo|
+|2|Carlos       |
+|3|Ana          |
 
-The workspace contains two folders by default, where:
+B: enderecos.csv:
+| rua; | cidade; | codigo(pessoa); |
+|-----|--------|----------------|
+| Rua A;| Curitiba;|1;|
+| Rua B;| São paulo;|1;|
+| Rua C;| blumenau;|3;|
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+C: pessoasComEnderecos.csv:
+|codigo;|nome;|rua;|cidade|
+|-------|-----|----|------|
+|1;|paulo|rua A| curitiba|
+|1;|paulo|rua B| São Paulo|
+|3;|Ana|rua C| Blumenau|
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Classe Pessoa:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+```
+public class Pessoa{
+    private int codigo;
+    private String nome;
+    private String rua;
+    private String cidade;
 
-## Dependency Management
+    // getters and setters
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    public String toCsv(){
+        return codigo + ";" nome + ";" + rua + ";" + cidade + ";";
+    }
+}
+
+```
+
+
